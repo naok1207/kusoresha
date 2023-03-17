@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: skyblue;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .url {
+      position: absolute;
+      bottom: 1%;
+      right: 1%;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      color: transparent;
+      display: inline-block;
+      position: relative;
+      font-size: 100px;
+      line-height: 100px;
+    }
+
+    .text::before,
+    .text::after {
+      display: inline-block;
+      position: absolute;
+      inset: 0;
+      font-family: "Sawarabi Mincho";
+    }
+
+    .text::before {
+      color: white;
+      text-shadow: 1px 1px 5px white;
+      transform: skewY(-5deg) skewX(-10deg) rotate(-10deg);
+    }
+
+    .text::after {
+      color: transparent;
+      -webkit-text-stroke: 1px black;
+      transform: skewY(-5deg) skewX(-10deg) rotate(-10deg);
+      animation-name: move-text;
+      animation-delay: 2s;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes move-text {
+      0% {
+        transform: skewY(-5deg) skewX(-10deg) rotate(-10deg);
+      }
+
+      100% {
+        transform: skewY(-5deg) skewX(-10deg) rotate(-10deg) translate(-2px, -3px);
+      }
+    }
+
+    .text:nth-child(1):before,
+    .text:nth-child(1):after {
+      content: '空';
+    }
+
+    .text:nth-child(2):before,
+    .text:nth-child(2):after {
+      content: '奏';
+    }
+
+    .text:nth-child(3):before,
+    .text:nth-child(3):after {
+      content: '列';
+    }
+
+    .text:nth-child(4):before,
+    .text:nth-child(4):after {
+      content: '車';
+    }
+
+  </style>
+</head>
+
+<body>
+  <a class="url" href="https://www.youtube.com/watch?v=p1lfwyWSGV4">https://www.youtube.com/watch?v=p1lfwyWSGV4</a>
+  <a class="text-container" href="https://www.youtube.com/watch?v=p1lfwyWSGV4">
+    <span class="text">空</span>
+    <span class="text">奏</span>
+    <span class="text">列</span>
+    <span class="text">車</span>
+  </a>
+</body>
+
+</html>
